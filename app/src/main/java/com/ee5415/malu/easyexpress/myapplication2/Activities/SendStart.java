@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class SendStart extends ActionBarActivity {
     private Toolbar mToolbar;
-    public Button mButtonConfirm,mButtonCancel;
+    public Button mButtonConfirm;
     public EditText mFrom,mTo,mDes,mExTime,mExDate;
     public String mOrderID;
 
@@ -38,7 +38,7 @@ public class SendStart extends ActionBarActivity {
 
         //wire up!
         mButtonConfirm = (Button) findViewById(R.id.confirm);
-        mButtonCancel = (Button) findViewById(R.id.cancel);
+
         mFrom = (EditText) findViewById(R.id.edit_from);
         mTo = (EditText) findViewById(R.id.edit_to);
         mDes = (EditText) findViewById(R.id.edit_des);
@@ -78,12 +78,7 @@ public class SendStart extends ActionBarActivity {
                 }
             }
         });
-        mButtonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
     }
 
 

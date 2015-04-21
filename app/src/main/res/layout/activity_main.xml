@@ -15,11 +15,7 @@
     <include android:id="@+id/tool_bar"
         layout = "@layout/tool_bar"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_alignParentBottom="true"
@@ -30,9 +26,10 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/primary_orange"
+            android:background="#ffff7f00"
             android:textSize="25dp"
-            android:text="send"/>
+            android:text="send"
+            android:textColor="#ffffffff" />
         <Button
             android:id="@+id/track_button"
             android:layout_weight="1"
@@ -40,7 +37,8 @@
             android:layout_height="wrap_content"
             android:background="@color/primary_blue"
             android:textSize="25dp"
-            android:text="track"/>
+            android:text="track"
+            android:textColor="#ffffffff" />
     </LinearLayout>
 
 </RelativeLayout>

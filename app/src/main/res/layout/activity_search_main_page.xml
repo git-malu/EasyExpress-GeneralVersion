@@ -3,22 +3,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background_blue"
-    >
+    android:background="#ffffffff">
 
-    <Button
-        android:id="@+id/btnkuaidi"
-        android:layout_width="match_parent"
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_Company"
-        android:background="@color/primary_blue"
-        android:minHeight="50dp"/>
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+        <ImageView
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/truck"
+            android:src="@drawable/truck"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/gongsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Choose your express company"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/truck"
+            android:layout_toEndOf="@+id/truck"
+            android:layout_toLeftOf="@+id/btnkuaidi"
+            />
+        <Button
+            android:id="@+id/btnkuaidi"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="▽"
+            android:background="#ffffffff"
+            android:textColor="#ffe7e7e7"
+            android:textSize="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
 
    <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        >
-        <EditText
+        android:layout_margin="20dp">
+       <ImageView
+
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:id="@+id/barcode"
+           android:src="@drawable/barcode"
+           android:layout_centerVertical="true"/>
+
+
+
+
+       <EditText
             android:id="@+id/edtCode"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -28,14 +67,25 @@
             android:inputType="textPersonName"
             android:maxLines="10"
             android:singleLine="true"
-            android:hint="@string/hint1" />
+            android:hint="@string/hint1"
+           android:layout_alignParentTop="true"
+           android:layout_toRightOf="@+id/barcode"
+           android:layout_toEndOf="@+id/barcode" />
 
     </RelativeLayout>
-       <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-         >
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <ImageView
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/notes"
+            android:src="@drawable/note"
+            android:layout_centerVertical="true"/>
 
 
         <EditText
@@ -50,15 +100,21 @@
             android:inputType="textPersonName"
             android:maxLines="10"
             android:singleLine="true"
-            android:hint="@string/hint2" />
+            android:hint="@string/hint2"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/notes"
+            android:layout_toEndOf="@+id/notes"/>
 
     </RelativeLayout>
+
+
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="50dp"
+        android:layout_height="50dp"
         android:background="@color/secondary_blue"
-        android:text="@string/btn_track" />
+        android:text="@string/btn_track"
+        android:textSize="20dp"
+        android:textColor="#ffffffff" />
 
 </LinearLayout>

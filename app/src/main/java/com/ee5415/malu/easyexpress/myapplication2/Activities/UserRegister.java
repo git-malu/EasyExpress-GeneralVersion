@@ -12,7 +12,7 @@ import com.ee5415.malu.easyexpress.myapplication2.Classes.ThreadRegister;
 import com.ee5415.malu.easyexpress.myapplication2.R;
 
 public class UserRegister extends ActionBarActivity {
-    private Button mRegister,mClear;
+    private Button mRegister;
     private EditText mUserName,mUserPhone,mUserPass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class UserRegister extends ActionBarActivity {
         setContentView(R.layout.activity_user_register);
         //wire up!
         mRegister = (Button) findViewById(R.id.register_button);
-        mClear = (Button) findViewById(R.id.clear_button);
+
         mUserName = (EditText) findViewById(R.id.user_name);
         mUserPass = (EditText) findViewById(R.id.user_pass);
         mUserPhone = (EditText) findViewById(R.id.user_phone);
@@ -34,14 +34,7 @@ public class UserRegister extends ActionBarActivity {
             }
         });
 
-        mClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mUserPass.setText("");
-                mUserName.setText("");
-                mUserPhone.setText("");
-            }
-        });
+
     }
 
 

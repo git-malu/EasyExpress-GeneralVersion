@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Easy Express</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设置</string>
+
+    <string name="title_activity_send_start">寄快递</string>
+    <string name="title_activity_track_start">查快递</string>
+    <string name="title_activity_offer_list">订单列表</string>
+    <string name="title_activity_user">用户</string>
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_failed">登录失败</string>
+    <string name="login_succeeded">登陆成功</string>
+    <string name="title_activity_user_register">注册</string>
+    <string name="search_button">查快递</string>
+
+
+    <string name="title_activity_id_list">IdListActivity</string>
+    <string name="title_activity_pakge_info">PakgeInfoActivity</string>
+    <string name="title_activity_pakge_list">Easy Express</string>
+
+    <string name="noComp">请选择快递公司</string>
+    <string name="noCode">请输入快递单号</string>
+    <string name="title_Comp">快递公司：</string>
+    <string name="title_Code">快递单号：</string>
+    <string name="title_Info">信息</string>
+    <string name="button_Save">保存</string>
+    <string name="message_Title">备注</string>
+    <string name="message_Content">您想删除这条记录吗？</string>
+    <string name="message_yes">是</string>
+    <string name="message_no">否</string>
+    <string name="hint1">快递单号</string>
+    <string name="hint2">备注</string>
+    <string name="btn_Company">选择快递公司</string>
+    <string name="btn_track">追踪</string>
+    <string name="btn_package">追踪您的快递</string>
+    <string name="title_activity_welcome">EasyExpress</string>
+
+</resources>

@@ -6,7 +6,7 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                android:background="@color/background_orange"
+                android:background="#ffffffff"
                 tools:context="com.example.easyexpress.SendStart">
 
     <include
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="From:"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/edit_from"
@@ -47,8 +47,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TO:"
-                android:textSize="25dp"/>
+                android:text="To:"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/edit_to"
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Goods Description:"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/edit_des"
@@ -89,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Expected time:"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
             <EditText
                 android:id="@+id/edit_time"
                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Expected date:"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,24 +120,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_marginTop="400dp">
 
         <Button
             android:id="@+id/confirm"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#ffffbc3a"
+            android:background="#ffff7f00"
             android:text="CONFIRM"
-            android:textSize="25dp"/>
-        <Button
-            android:id="@+id/cancel"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/secondary_orange"
-            android:text="CANCEL"
-            android:textSize="25dp"/>
+            android:textSize="20dp"
+            android:textColor="#ffffffff" />
 
 
     </LinearLayout>

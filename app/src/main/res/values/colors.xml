@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_orange">#FFCC80</color>
+    <color name="primary_orange">#FF7E00</color>
     <color name="primary_orange_alpha">#AAFFCC80</color>
     <color name="secondary_orange">#FFECB3</color>
-    <color name="background_orange">#FFF3E0</color>
+    <color name="background_orange">#FFFFFF</color>
 
     <color name="primary_blue">#4FC3F7</color>
     <color name="primary_blue_alpha">#AA4FC3F7</color>
     <color name="secondary_blue">#81D4FA</color>
     <color name="secondary_blue_alpha">#AA81D4FA</color>
-    <color name="background_blue">#E1F5FE</color>
+    <color name="background_blue">#FFFFFF</color>
 
     <color name="primary_green">#00E676</color>
     <color name="primary_green_alpha">#AA0E6767</color>
     <color name="secondary_green">#69F0AE</color>
-    <color name="background_green">#B9F6CA</color>
+    <color name="background_green">#FFFFFF</color>
 
-    <color name="background_toolbar">#99B2DFDB</color>
-    <color name="text_color_toolbar">#F50057</color>
+    <color name="background_toolbar">#FFFFFF</color>
+    <color name="text_color_toolbar">#000000</color>
 
     <color name="pure_dark">#263238</color>
 
