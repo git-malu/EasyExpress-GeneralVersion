@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasyExpress</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_send_start">SendStart</string>
+    <string name="title_activity_track_start">TrackStart</string>
+    <string name="title_activity_offer_list">OfferList</string>
+    <string name="title_activity_user">User</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="login_succeeded">Login Succeeded !</string>
+    <string name="search_button">Search Express</string>
+
+
+
+    <string name="title_activity_id_list">IdListActivity</string>
+    <string name="title_activity_pakge_info">PakgeInfoActivity</string>
+    <string name="title_activity_pakge_list">easy express</string>
+
+    <string name="noComp">Please choose the Express Company first!</string>
+    <string name="noCode">Please enter the express code!</string>
+    <string name="title_Comp">Express Company:</string>
+    <string name="title_Code">Express Code:</string>
+    <string name="title_Info">Info:</string>
+    <string name="button_Save">Save!</string>
+    <string name="message_Title">Notice</string>
+    <string name="message_Content">DO you want to delete this record?</string>
+    <string name="message_yes">Yes</string>
+    <string name="message_no">No</string>
+    <string name="hint1">Enter your express code here!</string>
+    <string name="hint2">Enter comment here!</string>
+    <string name="btn_Company">Choose express Company</string>
+    <string name="btn_track">TRACK</string>
+    <string name="btn_package">Track your package</string>
+</resources>

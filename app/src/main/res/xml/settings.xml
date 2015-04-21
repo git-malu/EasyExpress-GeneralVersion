@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="User Info">
+        <CheckBoxPreference
+            android:title="UserInfo Remember"
+            android:defaultValue="false"
+            android:key="prefUserInfoSave"
+            android:summary="remember user name and passWord?"
+            >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="NetWork Setting">
+        <EditTextPreference
+            android:key="prefServerIP"
+            android:summary="set the default ServerIP"
+            android:title="ServerIP"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_blue"
+    >
+
+    <Button
+        android:id="@+id/btnkuaidi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_Company"
+        android:background="@color/primary_blue"
+        android:minHeight="50dp"/>
+
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/edtCode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:cursorVisible="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLines="10"
+            android:singleLine="true"
+            android:hint="@string/hint1" />
+
+    </RelativeLayout>
+       <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+
+
+        <EditText
+            android:id="@+id/edtinfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+
+            android:cursorVisible="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLines="10"
+            android:singleLine="true"
+            android:hint="@string/hint2" />
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:background="@color/secondary_blue"
+        android:text="@string/btn_track" />
+
+</LinearLayout>

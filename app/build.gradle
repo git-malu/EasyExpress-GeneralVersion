@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.ee5415.malu.easyexpress.myapplication2"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 2
+        versionName "2.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile files('libs/baidumapapi.jar')
+    compile files('libs/jsoup-1.7.2.jar')
+    compile files('C:/Users/Lu/Dropbox/My_Workspace/Android_Projects/OUYANG_WWY/EasyExpressPublish-master/app/libs/BaiduLBS_Android.jar')
+}
