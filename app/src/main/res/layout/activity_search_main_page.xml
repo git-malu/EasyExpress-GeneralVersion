@@ -7,39 +7,13 @@
 
 
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/btnkuaidi"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
-        <ImageView
-
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/truck"
-            android:src="@drawable/truck"
-            android:layout_centerVertical="true"/>
-        <EditText
-            android:id="@+id/gongsi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Choose your express company"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/truck"
-            android:layout_toEndOf="@+id/truck"
-            android:layout_toLeftOf="@+id/btnkuaidi"
-            />
-        <Button
-            android:id="@+id/btnkuaidi"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="▽"
-            android:background="#ffffffff"
-            android:textColor="#ffe7e7e7"
-            android:textSize="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"/>
-    </RelativeLayout>
+        android:text="@string/btn_Company"
+        android:background="@color/primary_blue"
+        android:minHeight="50dp"/>
 
 
    <RelativeLayout

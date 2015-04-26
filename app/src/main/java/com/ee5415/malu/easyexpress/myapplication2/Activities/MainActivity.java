@@ -162,10 +162,8 @@ public class MainActivity extends Activity {
             MyDatabase.mAddress = location.getAddrStr();
             MyDatabase.mLat = String.valueOf(location.getLatitude());
             MyDatabase.mLong = String.valueOf(location.getLongitude());
-            Toast.makeText(MainActivity.this,MyDatabase.mAddress+" "+MyDatabase.mLong+" " + MyDatabase.mLat,Toast.LENGTH_SHORT).show();
-
+//            Toast.makeText(MainActivity.this,MyDatabase.mAddress+" "+MyDatabase.mLong+" " + MyDatabase.mLat,Toast.LENGTH_SHORT).show();
         }
-
     }
 
     @Override
