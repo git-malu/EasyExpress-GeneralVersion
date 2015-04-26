@@ -16,6 +16,10 @@ public class MyDatabase {
     public static String IP = "144.214.103.219";
     public static String mLoginStatus = "false";//offline,true,false
     public static String mSendStatus = "false";
+    public static String mAddress;
+    public static String mLong;
+    public static String mLat;
+
 
     public static final String mPrefUserInfoSave = "prefUserInfoSave";
     public static final String mPrefServerIP = "prefServerIP";

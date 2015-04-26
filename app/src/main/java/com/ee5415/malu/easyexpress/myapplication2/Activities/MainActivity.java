@@ -1,19 +1,25 @@
 package com.ee5415.malu.easyexpress.myapplication2.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.BMapManager;
-import com.baidu.mapapi.MapActivity;
-import com.baidu.mapapi.MapController;
-import com.baidu.mapapi.MapView;
+import com.baidu.mapapi.map.LocationData;
+import com.baidu.mapapi.map.MapController;
+import com.baidu.platform.comapi.basestruct.GeoPoint;
 import com.ee5415.malu.easyexpress.myapplication2.Classes.MyDatabase;
 import com.ee5415.malu.easyexpress.myapplication2.R;
 
@@ -27,54 +33,55 @@ import com.ee5415.malu.easyexpress.myapplication2.R;
 * 至于offer的处理方式，暂时不用SQLite存储。纯粹网上读取。
 *
 * */
-public class MainActivity extends MapActivity {
+public class MainActivity extends Activity {
     /** Called when the activity is first created. */
     private Toolbar mToolbar;
-    // 添加百度地图的相关控件
-    private MapView mapView;
-    private BMapManager bMapManager;// 加载地图的引擎
-    // 百度地图的key
-    private String keyString = "A270F85CD72A01E8519A9677A75FB4016ED9A5A3";
-    // 在百度地图上添加一些控件，比如是放大或者缩小的控件
-    private MapController mapController;
+    MyLocationMapView mapView = null;// 显示地图的控件
+    LocationData locationData = null;// location的数据保存对象
+    LocationClient mLocationClient;// 定位的这样的类
+    public MyLocationListener mListener = new MyLocationListener();// 监听的函数
+    private MapController controller = null;// 一个Mapcontroller类
 
     private Button mSendButton,mTrackButton;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        DemoApplication application = (DemoApplication) this.getApplication();// 获得我的应用程序的实例
+        if (application.mapManager == null) {// 要是管理员为空就 创建一个 管理对象
+            application.mapManager = new BMapManager(getApplicationContext());
+            application.mapManager
+                    .init(new DemoApplication.MygeneralListener());// 注册一个listener对象
+        }
+
         setContentView(R.layout.activity_main);
         MyDatabase.IP = PreferenceManager.getDefaultSharedPreferences(this).getString("prefServerIP","null");
 
 
-        /////////////////////////////////////////////////
-//        mapView = (MapView) this.findViewById(R.id.bmapView);
-//        bMapManager = new BMapManager(MainActivity.this);
-//        // 必须要加载key
-//        bMapManager.init(keyString, new MKGeneralListener() {
-//            @Override
-//            public void onGetPermissionState(int arg0) {
-//                // TODO Auto-generated method stub
-//                if (arg0 == 300) {
-//                    Toast.makeText(MainActivity.this, "输入的Key有错！请核实！！",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//            @Override
-//            public void onGetNetworkState(int arg0) {
-//                // TODO Auto-generated method stub
-//            }
-//        });
-//
-//        this.initMapActivity(bMapManager);
-//        mapView.setBuiltInZoomControls(true);// 表示可以设置缩放功能
-//        mapController = mapView.getController();
-//        // 需要定义一个经纬度：北京天安门
-//        GeoPoint geoPoint = new GeoPoint((int) (22.339433 * 1E6),
-//                (int) (114.183483 * 1E6));
-//
-//        mapController.setCenter(geoPoint);// 设置一个中心点
-//        mapController.setZoom(12);// 设置缩放级别是12个级别
-//////////////////////////////////////////////////////////////////////////////////////////////
+        mapView = (MyLocationMapView) findViewById(R.id.bmapView);
+
+        controller = mapView.getController();// 获得mapview的控制权
+        mapView.getController().setZoom(17);// 设置缩放的级别
+        mapView.getController().enableClick(true);// 能够获得点击事件
+        mapView.showScaleControl(true);
+        mapView.setBuiltInZoomControls(true);
+        ///////////////////////
+
+        mLocationClient = new LocationClient(getApplicationContext());
+        locationData = new LocationData();
+        mLocationClient.registerLocationListener(mListener);
+        LocationClientOption option = new LocationClientOption();
+        option.setOpenGps(true);
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
+        option.setCoorType("bd0911");
+        option.setIsNeedAddress(true);
+        option.setScanSpan(5000);
+        option.setNeedDeviceDirect(true);
+        mLocationClient.setLocOption(option);
+        mLocationClient.start();
+
+
         //Send Button
         mSendButton = (Button) findViewById(R.id.send_button);
         mSendButton.setOnClickListener(new View.OnClickListener() {
@@ -139,38 +146,49 @@ public class MainActivity extends MapActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        // TODO Auto-generated method stub
-        super.onDestroy();
-        if (bMapManager != null) {
-            bMapManager.destroy();
-            bMapManager = null;
-        }
-    }
+    public class MyLocationListener implements BDLocationListener {
 
-    @Override
-    protected void onResume() {
-        // TODO Auto-generated method stub
-        super.onResume();
-        if (bMapManager != null) {
-            bMapManager.start();
+        @Override
+        public void onReceiveLocation(BDLocation location) {
+            // TODO Auto-generated method stub
+            if (location == null) {
+                return;
+            }
+            mapView.refresh();// 刷新mapview
+            Log.i("LocationOverlay", "接收到位置 移动到当前的位置");
+            controller.animateTo(new GeoPoint(
+                    (int) (location.getLatitude() * 1e6),
+                    (int) (location.getLongitude() * 1e6)));
+            MyDatabase.mAddress = location.getAddrStr();
+            MyDatabase.mLat = String.valueOf(location.getLatitude());
+            MyDatabase.mLong = String.valueOf(location.getLongitude());
+            Toast.makeText(MainActivity.this,MyDatabase.mAddress+" "+MyDatabase.mLong+" " + MyDatabase.mLat,Toast.LENGTH_SHORT).show();
+
         }
+
     }
 
     @Override
     protected void onPause() {
-        // TODO Auto-generated method stub
+
+        mapView.onPause();
         super.onPause();
-        if (bMapManager != null) {
-            bMapManager.stop();
-        }
     }
 
     @Override
-    protected boolean isRouteDisplayed() {
-        // TODO Auto-generated method stub
-        return false;
+    protected void onResume() {
+
+        mapView.onResume();
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        if (mLocationClient != null)
+            mLocationClient.stop();
+        mapView.destroy();
+        super.onDestroy();
     }
 }
 /*Toolbar methods
