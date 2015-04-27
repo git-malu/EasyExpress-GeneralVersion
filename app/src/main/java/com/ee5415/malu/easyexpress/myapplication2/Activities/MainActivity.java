@@ -102,8 +102,7 @@ public class MainActivity extends Activity {
         });
         //Toolbar initialization.
         mToolbar = (Toolbar) findViewById(R.id.tool_bar);
-        mToolbar.setTitle("             EasyExpress");
-        mToolbar.setLogo(R.drawable.ic_launcher);
+        mToolbar.setTitle("EasyExpress");
         mToolbar.setBackgroundColor(getResources().getColor(R.color.background_toolbar));
         mToolbar.setTitleTextColor(getResources().getColor(R.color.text_color_toolbar));
         mToolbar.inflateMenu(R.menu.menu_main);

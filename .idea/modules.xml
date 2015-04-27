@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EasyExpress_customer.iml" filepath="$PROJECT_DIR$/EasyExpress_customer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/general_version.iml" filepath="$PROJECT_DIR$/general_version.iml" />
     </modules>
   </component>
 </project>

@@ -39,8 +39,6 @@ public class InquiryStart extends ActionBarActivity {
             fragment = new MyOrderListViewFragment();
             fm.beginTransaction().add(R.id.fragment_container,fragment).commit();
         }
-
-
     }
 
 //    @Override
